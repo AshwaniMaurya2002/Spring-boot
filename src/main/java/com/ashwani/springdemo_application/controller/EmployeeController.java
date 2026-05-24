@@ -15,6 +15,11 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
+    @GetMapping("/")
+    public String getFirstPage(){
+        return  "Welcome to the Starting Page";
+    }
+
 //    @RequestMapping(path = "/getEmployee", method = RequestMethod.GET)
     @GetMapping("/getEmployee")
     public  String getEmployee(){
@@ -48,7 +53,8 @@ public class EmployeeController {
     }
 
     //old and hard way
-    @RequestMapping(path = "/updateEmployee" ,method = RequestMethod.PUT)
+//    @RequestMapping(path = "/updateEmployee" ,method = RequestMethod.PUT)
+    @PutMapping("/updateEmployee")
     public String updateEmployee(Employee employee){
         return  "Employee updated";
     }
